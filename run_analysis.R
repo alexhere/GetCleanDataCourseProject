@@ -56,6 +56,9 @@ dt$Activity <- loadVectorData(c("UCI HAR Dataset/test/y_test.txt","UCI HAR Datas
 # load subject data and add it to dt
 dt$Subject <- loadVectorData(c("UCI HAR Dataset/test/subject_test.txt","UCI HAR Dataset/train/subject_train.txt"))
 
+# convert subject data from character to numeric
+dt$Subject <- as.numeric(dt$Subject)
+
 # reorder columns - move subject to the 1st column and activity to 2nd column
 dt <- dt[,c("Subject", "Activity", colNames)]
 
